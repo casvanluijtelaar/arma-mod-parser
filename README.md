@@ -2,6 +2,7 @@
 Simple command-line tool for converting Arma 3 `Modlist.html` files into server mod strings 
 
 ## usage
+download the latest modparser.exe from https://github.com/casvanluijtelaar/arma-mod-parser/releases
 
 simply call the script and include the modlist filepath relative to the script:
 
