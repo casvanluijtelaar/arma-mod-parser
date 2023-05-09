@@ -24,11 +24,12 @@ void main(List<String> arguments) async {
     print("Mods found: ${mods.length}");
     print("");
 
-    final allowedCharacterRegex = RegExp("[^a-zA-Z0-9_. -]+");
+    final allowedCharacterRegex = RegExp("[^a-zA-Z0-9_' .-]+");
+    final optimizeSpacesRegex = RegExp("[ \t]+");
 
     final names = mods.map((mod) {
       final name = unescape.convert(mod.innerHtml);
-      return name.replaceAll(allowedCharacterRegex, "");
+      return name.replaceAll(allowedCharacterRegex, "").replaceAll(optimizeSpacesRegex, " ");
     });
 
     final formattedNames = names.map((name) => "@$name;");
